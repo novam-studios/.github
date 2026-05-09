@@ -101,7 +101,7 @@ Community Director
 
 <td align="center">
 <a href="https://github.com/r-0-s-e-y">
-<img src="images/rosey" width="110px;" alt="Rosey"/><br />
+<img src="images/rosey.png" width="110px;" alt="Rosey"/><br />
 <b>Rosey</b>
 </a><br />
 Legal Manager
