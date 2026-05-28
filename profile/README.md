@@ -77,7 +77,7 @@ Welcome to Novam Studios. 🎉
 
 <td align="center">
 <a href="https://github.com/TheSpectraDev">
-<img src="images/speccy" width="110px;" alt="Spectra"/><br />
+<img src="images/spectra.png" width="110px;" alt="Spectra"/><br />
 <b>Spectra</b>
 </a><br />
 CEO
@@ -85,7 +85,7 @@ CEO
 
 <td align="center">
 <a href="https://github.com/putridsouls">
-<img src="images/putrid" width="110px;" alt="Putrid"/><br />
+<img src="images/putrid.png" width="110px;" alt="Putrid"/><br />
 <b>Putrid</b>
 </a><br />
 Co Founder & Creative Director
@@ -93,7 +93,7 @@ Co Founder & Creative Director
 
 <td align="center">
 <a href="https://github.com/yoru-on-dc">
-<img src="images/yoru" width="110px;" alt="Yoru"/><br />
+<img src="images/yoru.png" width="110px;" alt="Yoru"/><br />
 <b>Yoru</b>
 </a><br />
 Community Director
