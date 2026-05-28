@@ -8,10 +8,14 @@ on:
 jobs:
   notify:
     runs-on: ubuntu-latest
+
     steps:
       - name: Send Discord Webhook
+        shell: bash
+
         env:
-          WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
         run: |
           REPO="${{ github.repository }}"
           EVENT="${{ github.event_name }}"
@@ -19,11 +23,9 @@ jobs:
           AVATAR="https://github.com/${ACTOR}.png"
           TIME="$(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-          # Webhook identity (user-based)
-          BOT_NAME="New Commit by ${ACTOR}"
-          BOT_AVATAR="$AVATAR"
+          BOT_NAME="GitHub Updates • ${ACTOR}"
+          BOT_AVATAR="${AVATAR}"
 
-          # Default embed values
           COLOR=5814783
           TITLE="📦 GitHub Event"
           DESC="Triggered event"
@@ -34,87 +36,122 @@ jobs:
           if [ "$EVENT" = "push" ]; then
             COLOR=3066993
             TITLE="🚀 New Push"
+
             COMMIT_MSG="${{ github.event.head_commit.message }}"
             COMMIT_SHA="${{ github.sha }}"
             SHORT_SHA=${COMMIT_SHA:0:7}
             BRANCH="${{ github.ref_name }}"
-            URL="https://github.com/${REPO}/commit/${COMMIT_SHA}"
 
-            DESC="**${COMMIT_MSG}**"
+            URL="https://github.com/${REPO}/commit/${COMMIT_SHA}"
+            DESC="${COMMIT_MSG}"
             REF="$SHORT_SHA"
-            EXTRA="🌿 Branch: \`${BRANCH}\`"
+            EXTRA="🌿 Branch: ${BRANCH}"
 
           elif [ "$EVENT" = "pull_request" ]; then
             COLOR=15105570
             TITLE="🔀 Pull Request (${{ github.event.action }})"
+
             PR_TITLE="${{ github.event.pull_request.title }}"
             PR_NUM="${{ github.event.pull_request.number }}"
             PR_STATE="${{ github.event.pull_request.state }}"
-            URL="${{ github.event.pull_request.html_url }}"
 
-            DESC="**${PR_TITLE}**"
+            URL="${{ github.event.pull_request.html_url }}"
+            DESC="${PR_TITLE}"
             REF="PR #${PR_NUM}"
-            EXTRA="📌 Status: \`${PR_STATE}\`"
+            EXTRA="📌 Status: ${PR_STATE}"
 
           elif [ "$EVENT" = "issues" ]; then
             COLOR=15158332
             TITLE="🐛 Issue (${{ github.event.action }})"
+
             ISSUE_TITLE="${{ github.event.issue.title }}"
             ISSUE_NUM="${{ github.event.issue.number }}"
-            URL="${{ github.event.issue.html_url }}"
 
-            DESC="**${ISSUE_TITLE}**"
+            URL="${{ github.event.issue.html_url }}"
+            DESC="${ISSUE_TITLE}"
             REF="Issue #${ISSUE_NUM}"
-            EXTRA="📣 Action: \`${{ github.event.action }}\`"
+            EXTRA="📣 Action: ${{ github.event.action }}"
           fi
 
-          curl -H "Content-Type: application/json" \
-          -d "{
-            \"username\": \"${BOT_NAME}\",
-            \"avatar_url\": \"${BOT_AVATAR}\",
-            \"embeds\": [{
-              \"title\": \"${TITLE}\",
-              \"url\": \"${URL}\",
-              \"color\": ${COLOR},
-              \"author\": {
-                \"name\": \"${ACTOR}\",
-                \"icon_url\": \"${AVATAR}\",
-                \"url\": \"https://github.com/${ACTOR}\"
-              },
-              \"thumbnail\": {
-                \"url\": \"${AVATAR}\"
-              },
-              \"fields\": [
-                {
-                  \"name\": \"📦 Repository\",
-                  \"value\": \"\`${REPO}\`\",
-                  \"inline\": true
+          FOOTERS=(
+            "Powered by GitHub Actions ⚡"
+            "Another event just dropped 👀"
+            "Tracking activity in ${REPO}"
+            "Automated with ❤️ by Yoru"
+            "GitHub → Discord bridge active"
+            "CI/CD never sleeps 🌙"
+            "glitch.bny isnt funny"
+            "૮꒰ ˶• ༝ •˶꒱ა ♡ | bny was here :3"
+          )
+
+          FOOTER=${FOOTERS[$RANDOM % ${#FOOTERS[@]}]}
+
+          JSON_PAYLOAD=$(jq -n \
+            --arg username "$BOT_NAME" \
+            --arg avatar "$BOT_AVATAR" \
+            --arg title "$TITLE" \
+            --arg url "$URL" \
+            --arg desc "$DESC" \
+            --arg actor "$ACTOR" \
+            --arg avatar2 "$AVATAR" \
+            --arg repo "$REPO" \
+            --arg event "$EVENT" \
+            --arg ref "$REF" \
+            --arg extra "$EXTRA" \
+            --arg footer "$FOOTER" \
+            --arg time "$TIME" \
+            --argjson color "$COLOR" \
+            '{
+              username: $username,
+              avatar_url: $avatar,
+              embeds: [{
+                title: $title,
+                url: $url,
+                description: $desc,
+                color: $color,
+
+                author: {
+                  name: $actor,
+                  icon_url: $avatar2,
+                  url: ("https://github.com/" + $actor)
                 },
-                {
-                  \"name\": \"⚡ Event\",
-                  \"value\": \"\`${EVENT}\`\",
-                  \"inline\": true
+
+                thumbnail: {
+                  url: $avatar2
                 },
-                {
-                  \"name\": \"🔢 Reference\",
-                  \"value\": \"\`${REF}\`\",
-                  \"inline\": true
+
+                fields: [
+                  {
+                    name: "📦 Repository",
+                    value: $repo,
+                    inline: true
+                  },
+                  {
+                    name: "⚡ Event",
+                    value: $event,
+                    inline: true
+                  },
+                  {
+                    name: "🔢 Reference",
+                    value: $ref,
+                    inline: true
+                  },
+                  {
+                    name: "🔍 Extra Info",
+                    value: $extra,
+                    inline: false
+                  }
+                ],
+
+                footer: {
+                  text: $footer
                 },
-                {
-                  \"name\": \"📝 Details\",
-                  \"value\": \"${DESC}\",
-                  \"inline\": false
-                },
-                {
-                  \"name\": \"🔍 Extra Info\",
-                  \"value\": \"${EXTRA}\",
-                  \"inline\": false
-                }
-              ],
-              \"footer\": {
-                \"text\": \"GitHub Actions • ${REPO}\"
-              },
-              \"timestamp\": \"${TIME}\"
-            }]
-          }" \
-          $WEBHOOK
+
+                timestamp: $time
+              }]
+            }')
+
+          curl -X POST \
+            -H "Content-Type: application/json" \
+            -d "$JSON_PAYLOAD" \
+            "$DISCORD_WEBHOOK"
