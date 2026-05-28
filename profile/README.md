@@ -100,9 +100,9 @@ Community Director
 </td>
 
 <td align="center">
-<a href="https://github.com/r-0-s-e-y">
-<img src="images/rosey.png" width="110px;" alt="Rosey"/><br />
-<b>Rosey</b>
+<a href="https://github.com/glitch-bny">
+<img src="images/glitch.png" width="110px;" alt="Bny"/><br />
+<b>bny</b>
 </a><br />
 Legal Manager
 </td>
