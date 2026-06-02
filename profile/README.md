@@ -1,76 +1,57 @@
-# 🎮 Novam Studios
-
 <div align="center">
+
+# 🎮 Novam Studios
 
 ### Creativity · Teamwork · Professionalism
 
-Building unique and immersive experiences on Roblox.
+**Building immersive Roblox experiences.**
+
+---
+
+*"Creating games that players enjoy and developers are proud to build."*
 
 </div>
 
----
+<br>
 
-# 🌟 About Novam Studios
+## 🌟 About Us
 
-Novam Studios is a creative development team focused on building unique and immersive experiences on Roblox.
+Novam Studios is a Roblox development organization focused on creating unique, polished, and immersive experiences.
 
-We operate on a **project-based development model** — carefully selected teams come together to create high-quality games and experiences.
+We bring together talented developers, designers, artists, and creators to collaborate on ambitious projects while maintaining professional standards and strong teamwork.
 
-Our goal is to create an environment where developers can:
-- Collaborate professionally
-- Improve their skills
-- Work on meaningful projects
-- Earn fairly from the work they contribute
+Our mission is simple:
 
----
-
-# ⚙️ How Development Works
-
-For every project, a team is assembled based on the skills required.
-
-### Development Roles
-- 💼 Lead Developer
-- 📋 Game Designers
-- ⚒️ Builders
-- 🔧 Scripters
-- 🎨 UI/UX Designers
-- 🎵 Audio Designers
-- 🧪 Testers
-
-Developers choose whether they want to contribute to a project.
-
-All developers working on a project collaborate within the same repositories and development environments to ensure streamlined teamwork and organization.
-
-Only the developers actively working on that project share in the revenue it generates.
-
-Contribution levels are overseen to ensure fairness — developers contributing more work or taking on larger responsibilities may receive a larger share based on their impact.
+* 🎨 Create memorable experiences
+* 🤝 Build a collaborative development culture
+* 🚀 Support developer growth
+* 💎 Deliver high-quality projects
 
 ---
 
-# 🌟 Our Values
+## 🌟 Our Values
 
-## 🎨 Creativity
-We encourage original ideas and unique experiences.
+### 🎨 Creativity
 
-## 🤝 Teamwork
-Strong collaboration creates stronger projects.
+We encourage innovation, experimentation, and original ideas.
 
-## 💼 Professionalism
-We maintain organized workflows, respectful communication, and quality standards.
+### 🤝 Teamwork
 
----
+Great projects are built by great teams working together.
 
-# 🎯 Our Goal
+### 💼 Professionalism
 
-While Novam Studios is still growing, our ambition is clear:
-
-> To become a recognized and respected name within the Roblox community by delivering high-quality games and experiences for both players and developers.
-
-Welcome to Novam Studios. 🎉
+Organization, communication, and quality are at the core of everything we do.
 
 ---
 
-# 🏆 High Rank Staff
+## 🎯 Our Vision
+
+Our ambition is to become a recognized and respected name within the Roblox development community by consistently delivering exceptional experiences for players and opportunities for developers.
+
+---
+
+## 🏆 Leadership
 
 <table>
 <tr>
@@ -88,7 +69,7 @@ CEO
 <img src="images/putrid.png" width="110px;" alt="Putrid"/><br />
 <b>Putrid</b>
 </a><br />
-Co Founder & Creative Director
+Co-Founder & Creative Director
 </td>
 
 <td align="center">
@@ -102,7 +83,7 @@ Community Director
 <td align="center">
 <a href="https://github.com/glitch-bny">
 <img src="images/glitch.png" width="110px;" alt="Bny"/><br />
-<b>bny</b>
+<b>Bny</b>
 </a><br />
 Legal Manager
 </td>
@@ -112,168 +93,47 @@ Legal Manager
 
 ---
 
-# 🚀 Projects
+## 🚀 What You'll Find Here
 
-Most Novam Studios repositories are kept private/internal as they contain active development work, internal systems, proprietary assets, or unreleased projects.
-
-Only selected projects, frameworks, and open-source resources are made public.
+Most Novam Studios repositories remain private while projects are actively developed.
 
 Public repositories may include:
-- Open-source tools
-- Shared development resources
-- Documentation
-- Experimental systems
-- Community resources
+
+* 🛠️ Open-source tools
+* 📚 Documentation
+* ⚙️ Development frameworks
+* 🧪 Experimental projects
+* 🌐 Community resources
 
 ---
 
-# 🛠️ Technologies We Use
+## 🛠️ Technologies
 
-- Roblox Studio
-- Luau
-- Rojo
-- Knit
-- Fusion
-- Roact
-- TypeScript
-- GitHub Actions
+<p align="center">
+
+Roblox Studio • Luau • Rojo • Knit • Fusion • Roact • TypeScript • GitHub Actions
+
+</p>
 
 ---
 
-# 📄 Contribution Guidelines
+## 📢 Connect With Us
 
-We welcome contributions from approved Novam Studios developers.
+💬 Discord: https://discord.gg/novam
 
-Follow the steps below to contribute to a project.
-
----
-
-## 🔹 Step 1 — Access the Repository
-
-Developers assigned to a project will be granted access to the project's repository.
-
-Most repositories are private/internal and only accessible to approved team members.
-
----
-
-## 🔹 Step 2 — Clone the Repository (Optional)
-
-If you want to work locally, clone the repository to your computer.
-
-```bash
-git clone https://github.com/ORG-NAME/REPOSITORY-NAME.git
-```
-
-Move into the project folder:
-
-```bash
-cd REPOSITORY-NAME
-```
-
-You may also use GitHub's web editor if cloning is unnecessary.
-
----
-
-## 🔹 Step 3 — Create a New Branch
-
-Create a branch for your changes.
-
-```bash
-git checkout -b feature/your-feature-name
-```
-
-Example:
-
-```bash
-git checkout -b feature/new-ui
-```
-
----
-
-## 🔹 Step 4 — Make Your Changes
-
-Work on your assigned tasks and keep commits organized.
-
-Examples:
-- Add new systems
-- Improve UI
-- Fix bugs
-- Optimize performance
-- Update documentation
-
----
-
-## 🔹 Step 5 — Commit Your Changes
-
-Stage and commit your work.
-
-```bash
-git add .
-git commit -m "Added new inventory system"
-```
-
----
-
-## 🔹 Step 6 — Push Your Branch
-
-Push your changes to GitHub.
-
-```bash
-git push origin feature/your-feature-name
-```
-
----
-
-## 🔹 Step 7 — Open a Pull Request
-
-Open a Pull Request into the appropriate development branch.
-
-Include:
-- A clear description
-- Screenshots/videos if applicable
-- What was changed
-- Why the changes were made
-
----
-
-## 🔹 Step 8 — Review Process
-
-A Novam Studios staff member will review your pull request.
-
-Changes may be:
-- ✅ Approved
-- 🛠️ Requested for revision
-- ❌ Declined if they do not meet project standards
-
----
-
-# ⚠️ Contribution Rules
-
-- Keep code clean and readable
-- Follow project structure
-- Do not leak internal assets
-- Respect all contributors
-- Test your work before submitting
-- Avoid unnecessary commits/spam
-
----
-
-# 📢 Social Links
-
-- 💬 Discord Server: https://discord.gg/novam
-- 🌐 Website: https://novamstudios.com
-
----
-
-# ❤️ Credits
-
-Special thanks to all developers, artists, builders, composers, testers, and community members supporting Novam Studios.
+🌐 Website: https://novamstudios.com
 
 ---
 
 <div align="center">
 
-## ⭐ Thanks for visiting our organization page!
+### ❤️ Thank You
+
+Special thanks to all developers, artists, builders, composers, testers, and community members who help make Novam Studios possible.
+
+<br>
+
+**⭐ Thanks for visiting our organization!**
 
 *"Building immersive Roblox experiences together."*
 
