@@ -82,7 +82,7 @@ Community Director
 
 <td align="center">
 <a href="https://github.com/glitch-bny">
-<img src="images/glitch.gif" width="200px;" alt="Bny"/><br />
+<img src="images/glitch.png" width="110px;" alt="Bny"/><br />
 <b>Bny</b>
 </a><br />
 Legal Manager
